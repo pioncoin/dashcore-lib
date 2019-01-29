@@ -1,70 +1,71 @@
 'use strict';
 
-var bitcore = module.exports;
+var pioncore = module.exports;
 
 // module information
-bitcore.version = 'v' + require('./package.json').version;
-bitcore.versionGuard = function(version) {
+pioncore.version = 'v' + require('./package.json').version;
+pioncore.versionGuard = function(version) {
   if (version !== undefined) {
-    var message = 'More than one instance of dashcore-lib found. ' +
-      'Please make sure that you are not mixing instances of classes of the different versions of dashcore.';
+    var message = 'More than one instance of pioncore-lib found. ' +
+      'Please make sure that you are not mixing instances of classes of the different versions of pioncore.';
     console.warn(message);
   }
 };
-bitcore.versionGuard(global._bitcore);
-global._bitcore = bitcore.version;
+pioncore.versionGuard(global._pioncore);
+global._pioncore = pioncore.version;
 
 // crypto
-bitcore.crypto = {};
-bitcore.crypto.BN = require('./lib/crypto/bn');
-bitcore.crypto.ECDSA = require('./lib/crypto/ecdsa');
-bitcore.crypto.Hash = require('./lib/crypto/hash');
-bitcore.crypto.Random = require('./lib/crypto/random');
-bitcore.crypto.Point = require('./lib/crypto/point');
-bitcore.crypto.Signature = require('./lib/crypto/signature');
+pioncore.crypto = {};
+pioncore.crypto.BN = require('./lib/crypto/bn');
+pioncore.crypto.ECDSA = require('./lib/crypto/ecdsa');
+pioncore.crypto.Hash = require('./lib/crypto/hash');
+pioncore.crypto.Random = require('./lib/crypto/random');
+pioncore.crypto.Point = require('./lib/crypto/point');
+pioncore.crypto.Signature = require('./lib/crypto/signature');
 
 // encoding
-bitcore.encoding = {};
-bitcore.encoding.Base58 = require('./lib/encoding/base58');
-bitcore.encoding.Base58Check = require('./lib/encoding/base58check');
-bitcore.encoding.BufferReader = require('./lib/encoding/bufferreader');
-bitcore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
-bitcore.encoding.Varint = require('./lib/encoding/varint');
+pioncore.encoding = {};
+pioncore.encoding.Base58 = require('./lib/encoding/base58');
+pioncore.encoding.Base58Check = require('./lib/encoding/base58check');
+pioncore.encoding.BufferReader = require('./lib/encoding/bufferreader');
+pioncore.encoding.BufferWriter = require('./lib/encoding/bufferwriter');
+pioncore.encoding.Varint = require('./lib/encoding/varint');
 
 // utilities
-bitcore.util = {};
-bitcore.util.buffer = require('./lib/util/buffer');
-bitcore.util.js = require('./lib/util/js');
-bitcore.util.preconditions = require('./lib/util/preconditions');
+pioncore.util = {};
+pioncore.util.buffer = require('./lib/util/buffer');
+pioncore.util.js = require('./lib/util/js');
+pioncore.util.preconditions = require('./lib/util/preconditions');
 
 // errors thrown by the library
-bitcore.errors = require('./lib/errors');
+pioncore.errors = require('./lib/errors');
 
-// main bitcoin library
-bitcore.Address = require('./lib/address');
-bitcore.Block = require('./lib/block');
-bitcore.MerkleBlock = require('./lib/block/merkleblock');
-bitcore.BlockHeader = require('./lib/block/blockheader');
-bitcore.HDPrivateKey = require('./lib/hdprivatekey.js');
-bitcore.HDPublicKey = require('./lib/hdpublickey.js');
-bitcore.Networks = require('./lib/networks');
-bitcore.Opcode = require('./lib/opcode');
-bitcore.PrivateKey = require('./lib/privatekey');
-bitcore.PublicKey = require('./lib/publickey');
-bitcore.Script = require('./lib/script');
-bitcore.Transaction = require('./lib/transaction');
-bitcore.GovObject = require('./lib/govobject');
-bitcore.URI = require('./lib/uri');
-bitcore.Unit = require('./lib/unit');
-bitcore.Message = require('./lib/message')
+// main pioncoin library
+pioncore.Address = require('./lib/address');
+pioncore.Block = require('./lib/block');
+pioncore.MerkleBlock = require('./lib/block/merkleblock');
+pioncore.BlockHeader = require('./lib/block/blockheader');
+pioncore.HDPrivateKey = require('./lib/hdprivatekey.js');
+pioncore.HDPublicKey = require('./lib/hdpublickey.js');
+pioncore.Networks = require('./lib/networks');
+pioncore.Opcode = require('./lib/opcode');
+pioncore.PrivateKey = require('./lib/privatekey');
+pioncore.PublicKey = require('./lib/publickey');
+pioncore.Script = require('./lib/script');
+pioncore.Transaction = require('./lib/transaction');
+pioncore.GovObject = require('./lib/govobject');
+pioncore.URI = require('./lib/uri');
+pioncore.Unit = require('./lib/unit');
+pioncore.Message = require('./lib/message')
 
 // dependencies, subject to change
-bitcore.deps = {};
-bitcore.deps.bnjs = require('bn.js');
-bitcore.deps.bs58 = require('bs58');
-bitcore.deps.Buffer = Buffer;
-bitcore.deps.elliptic = require('elliptic');
-bitcore.deps._ = require('lodash');
+pioncore.deps = {};
+pioncore.deps.bnjs = require('bn.js');
+pioncore.deps.bs58 = require('bs58');
+pioncore.deps.Buffer = Buffer;
+pioncore.deps.elliptic = require('elliptic');
+pioncore.deps.nodeX16r = require('node-x16r');
+pioncore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
-bitcore.Transaction.sighash = require('./lib/transaction/sighash');
+pioncore.Transaction.sighash = require('./lib/transaction/sighash');
