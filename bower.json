@@ -1,16 +1,17 @@
 {
-  "name": "bitcore-lib-dash",
-  "main": "./bitcore-lib-dash.min.js",
+  "name": "pioncore-lib",
+  "main": "./dist/pioncore-lib.js",
   "version": "0.15.3",
-  "homepage": "https://github.com/dashevo/bitcore-lib-dash",
+  "homepage": "https://github.com/pioncoin/pioncore-lib",
   "authors": [
-    "Dash", "BitPay, Inc."
+    "pioncore"
   ],
-  "description": "A pure, powerful core for your Dash project.",
+  "description": "A pure, powerful core for your Pion project.",
   "moduleType": [
     "globals"
   ],
   "keywords": [
+    "pion",
     "dash",
     "bitcoin",
     "bitcore",

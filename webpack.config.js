@@ -6,22 +6,25 @@ const commonJSConfig = {
   module: {
     rules: [],
   },
-  target: 'web'
+  target: 'web',
+  node: {
+    fs: 'empty'
+  }
 };
 
 const rawConfig = Object.assign({}, commonJSConfig, {
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'dashcore-lib.js',
-    library: 'dashcore',
+    filename: 'pioncore-lib.js',
+    library: 'pioncore',
     libraryTarget: 'umd',
   }
 })
 const uglifiedConfig = Object.assign({}, commonJSConfig, {
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'dashcore-lib.min.js',
-    library: 'dashcore',
+    filename: 'pioncore-lib.min.js',
+    library: 'pioncore',
     libraryTarget: 'umd',
   },
   plugins: [
